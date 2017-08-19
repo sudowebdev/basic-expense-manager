@@ -89,12 +89,16 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     //defined the methods
+    
+    //function for storing the categories array into the localStorage
     function save() {
 
         localStorage.setItem('category', JSON.stringify(categories));
         console.log('Saving categories into the localStorage');
     }
 
+    //function for storing the default categories array into the localStorage
+    //executes only for the first time (at the time of page-loading)
     function saveInitial() {
         categories = [{
                 name: 'Food',
@@ -122,12 +126,14 @@ window.addEventListener("DOMContentLoaded", function () {
         console.log('Saving categories into the localStorage');
     }
 
+    //retrieve the categories from the localStorage and put them in categories array
     function retrieveCategories() {
         console.log('Retrieving categories');
         //Convert string into objects and store them in categories
         categories = JSON.parse(localStorage.getItem('category') ? localStorage.getItem('category') : '[]');
     }
 
+    //function for refreshing the dropdown in add-expenses form
     function refreshCategoryList() {
 
 
@@ -143,6 +149,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    //function for refreshing the status-bars
     function statusBarsRefresh() {
         $('#status').empty();
 
