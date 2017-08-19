@@ -2,10 +2,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var categories = [];
     //name, expenseTarget, currentExpense
+
+    //functions to execute at the time when page gets refreshed
     saveInitial();
     retrieveCategories();
     statusBarsRefresh();
-    console.log("Testing: ", categories);
+
+    console.log("Categories: ", categories);
+
+    //defining the variables
     var toggleAddCategories = document.getElementById('toggleAddCategories');
     var toggleAddExpenses = document.getElementById('toggleAddExpenses');
     var addExpenses = document.getElementById('add-expenses');
