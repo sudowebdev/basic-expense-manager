@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", function () {
     var select_category = document.getElementById('select-category');
     refreshCategoryList();
 
+    //toggle the add-expenses and add-categories sections
     addExpenses.style.display = 'none';
     addCategories.style.display = 'none';
 
@@ -41,6 +42,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //defined the "onsubmit" event listener for add-categories form
     addCategoriesForm.addEventListener('submit', function (evt) {
         evt.preventDefault();
         let category = addCategoriesForm.elements[0].value;
@@ -59,7 +61,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     })
 
-
+    //defined the "onsubmit" event listener for add-expenses form
     addExpensesForm.addEventListener('submit', function (evt) {
         evt.preventDefault();
         let expense = +addExpensesForm.elements[0].value;
@@ -85,6 +87,8 @@ window.addEventListener("DOMContentLoaded", function () {
     })
 
 
+
+    //defined the methods
     function save() {
 
         localStorage.setItem('category', JSON.stringify(categories));
@@ -92,7 +96,6 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     function saveInitial() {
-
         categories = [{
                 name: 'Food',
                 expenseTarget: 1800,
